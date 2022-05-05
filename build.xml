@@ -95,7 +95,7 @@
 	
 	<target name="jar" depends="version.default">
 		<buildnumber file="${build.properties}"/>
-		<javac srcdir="${src}" destdir="${bin}" source="1.6" target="1.5" includes="**/*.java" includeantruntime="false" classpathref="class.path"/>
+		<javac srcdir="${src}" destdir="${bin}" source="11" target="11" includes="**/*.java" includeantruntime="false" classpathref="class.path"/>
 		<!--<exportjar dir="build"/>-->
 		<jar jarfile="${build.jar}" basedir="${bin}" manifest="MANIFEST.MF"/>
 		<zip destfile="${build.jar.depends}">
@@ -114,6 +114,8 @@
 		<script language="javascript"><![CDATA[
 			//https://ant.apache.org/manual/Tasks/script.html
 			//importPackage(java.io);
+			load("nashorn:mozilla_compat.js");
+
 			importClass(java.io.File);
 			function echo(message) {
 				var echotask = project.createTask('echo');

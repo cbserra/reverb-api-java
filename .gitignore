@@ -1,3 +1,13 @@
 bin
 build
 local.properties
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# VS Code
+.vscode
+
+# macOS
+__MACOSX
+.DS_Store
